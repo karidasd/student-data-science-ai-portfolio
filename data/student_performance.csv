@@ -1,0 +1,16 @@
+student_id,study_hours,attendance_pct,extracurricular,exam_score,passed
+1001,15,92,Yes,85,Yes
+1002,5,70,No,48,No
+1003,12,88,Yes,78,Yes
+1004,4,65,No,40,No
+1005,18,95,No,92,Yes
+1006,8,82,Yes,65,Yes
+1007,10,75,No,58,No
+1008,14,90,Yes,82,Yes
+1009,6,60,No,45,No
+1010,20,98,Yes,96,Yes
+1011,7,80,No,55,No
+1012,11,85,Yes,72,Yes
+1013,3,50,No,35,No
+1014,16,92,Yes,88,Yes
+1015,9,78,No,62,Yes

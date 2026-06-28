@@ -1,0 +1,9 @@
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+env/
+.ipynb_checkpoints/
+.DS_Store
+plots/study_hours_vs_score.png
+plots/correlation_heatmap.png
