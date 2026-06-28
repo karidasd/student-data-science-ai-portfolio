@@ -1,8 +1,12 @@
 # Student Data Science & AI Portfolio Template
 
-This repository is an **educational portfolio template** designed for students entering the fields of Data Science, Data Analytics, and AI Engineering. 
+<p align="center">
+  <img src="assets/logo.png" alt="Student Data Science & AI Portfolio Logo" width="220" />
+</p>
 
-It demonstrates how to combine **relational database queries (SQL)**, **Exploratory Data Analysis (Python/Pandas/Seaborn)**, and **Generative AI LLM integrations** into a single, unified project that showcase complete technical capability on GitHub.
+Welcome to the **Student Data Science & AI Portfolio Template**! This repository is an educational resource designed for students entering the fields of Data Science, Data Analytics, and AI Engineering. 
+
+It demonstrates how to combine **relational database queries (SQL)**, **Exploratory Data Analysis (Python/Pandas/Seaborn)**, and **Generative AI LLM integrations** into a single, unified, automated pipeline on GitHub.
 
 ---
 
@@ -25,19 +29,33 @@ This template is structured around skills taught in four popular free educationa
 
 ---
 
+## 💡 The Modern Data Analyst: Synergy of SQL/Python & AI
+
+Traditional data analysts spend 80% of their time retrieving data (writing SQL) and cleaning/visualizing it (using Python). In the age of AI, the modern data analyst acts as a **system architect** who connects database logic with AI-driven diagnostic insights:
+
+*   **The SQL Layer (SQL + DB)**: Used for exact, deterministic record retrieval. AI is bad at doing heavy calculations or exact sums directly, but SQL databases excel at it.
+*   **The Python Layer (Pandas + Seaborn)**: Used to filter data, run statistical tests, and generate visual charts. This provides the mathematical truth of the dataset.
+*   **The AI Layer (LLM API + Prompt Engineering)**: Used to interpret the data summaries, find non-obvious recommendations, and structure them as JSON payloads that can be fed into web dashboards, notification systems, or student alert systems.
+
+By marrying these three layers, students demonstrate they can build **automated analytics pipelines** rather than just static reports.
+
+---
+
 ## 🔗 How They Connect (The AI & Data Science Workflow)
 
 ```mermaid
 graph TD
-    A[1. Kaggle Dataset: CSV Data] --> B[2. SQL Queries: CTEs & Joins]
-    B --> C[3. Pandas & Seaborn EDA: Plots & Corrs]
-    C --> D[4. LLM API: Structured JSON Report Generator]
+    A[1. Kaggle Dataset: CSV Data] --> B[2. SQL Database: SQLite Setup]
+    B --> C[3. SQL Queries: CTEs & Window Functions]
+    C --> D[4. Pandas & Seaborn: Visual Plots & Corrs]
+    D --> E[5. LLM API: Structured JSON Report Generator]
 ```
 
 1.  **Data Sourcing (Kaggle)**: We load a dataset containing student attendance, study hours, and exam scores.
-2.  **Structured Database Analytics (SQL/Coursera)**: We write database scripts representing how we would query this table, compute ranks, and extract cohorts.
-3.  **Exploratory Data Analysis (Pandas/freeCodeCamp)**: We analyze variables and save scatter plots showing relationships and heatmaps showing correlations.
-4.  **AI Integration (DeepLearning.AI)**: We pass the statistical summaries to an LLM (using Hugging Face or Ollama) to automatically generate structured business recommendations in JSON.
+2.  **Local Database (SQLite)**: We initialize a local `students.db` file and import the CSV records automatically.
+3.  **Relational Querying (SQL/Coursera)**: We write database scripts using CTEs to group students and dense-rank scores.
+4.  **Exploratory Data Analysis (Pandas/freeCodeCamp)**: We analyze variables and save plots showing correlations.
+5.  **AI Integration (DeepLearning.AI)**: We pass the statistical summaries to an LLM (using Hugging Face or Ollama) to automatically generate structured business recommendations in JSON.
 
 ---
 
@@ -51,18 +69,19 @@ Install Python 3.10+ and run:
 pip install -r requirements.txt
 ```
 
-### 2. Swap the Dataset
+### 2. Run the End-to-End Pipeline
+Execute the main orchestrator script. This will create the database, run SQL queries, generate Seaborn plots, and run the AI generator in one command:
+```bash
+python main.py
+```
+
+### 3. Swap the Dataset
 Download any tabular dataset from Kaggle (e.g. Sales, Churn, Weather) and save it in the `data/` folder as a CSV.
 
-### 3. Rewrite SQL Queries
-Update the SQL scripts inside `sql_queries/` to match your new dataset's columns and compute cohort pass rates, averages, and ranks.
+### 4. Update the SQL & Python Code
+- Update the SQL queries in `sql_queries/` to match your columns.
+- Update `notebooks/eda_visualization.py` to plot your new variables.
+- Run `python main.py` again to automatically update your database and generate new plots and AI recommendations!
 
-### 4. Run EDA & Visualizations
-Open [notebooks/eda_visualization.py](notebooks/eda_visualization.py) inside your IDE (like VS Code or Jupyter) and change columns to print your new dataset's statistics and save scatter plots.
-
-### 5. Generate AI Reports
-Open [ai_agent/ai_report_generator.py](ai_agent/ai_report_generator.py), configure a free API token (e.g. Hugging Face), and run the script to generate an automated recommendation report tailored to your dataset!
-```bash
-# To run the generator
-python ai_agent/ai_report_generator.py
-```
+### 5. Check CI/CD Workflows
+This repository has a built-in **GitHub Actions CI workflow** (`.github/workflows/verify.yml`). When you push your code, GitHub automatically runs a syntax verification check to prove your code is clean and deployable.
